@@ -31,6 +31,8 @@
 
     .player .player-button--play {}
     .player .player-button--pause {}
+    .player .player-button--volume {}
+    .player .player-button--mute {}
 
     .player.shadow {
     box-shadow: 0 0 20px rgba(0,0,0, 0.8);
@@ -46,6 +48,13 @@
       </button>
       <button class="player-button player-button--pause js-pause-button">
         <i class="fa fa-pause player-button__icon" aria-hidden="true"></i>
+      </button>
+      <button class="player-button player-button--mute js-mute-button">
+        <i class="fa fa-volume-up player-button__icon" aria-hidden="true"></i>
+      </button>
+      <button
+        class="player-button player-button--volume js-volume-button">
+        <i class="fa fa-volume-off player-button__icon" aria-hidden="true"></i>
       </button>
     </div>
   </div>
