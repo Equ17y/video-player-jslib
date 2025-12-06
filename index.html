@@ -8,11 +8,11 @@
     .player {
     width: 800px;
     height: 600px;
+    display: flex;  flex-direction: column;
     }
 
     .player .screen {
-    width: 100%;
-    height: 100%;
+    flex-grow: 1;
     }
 
     .player .bottom-controls {
@@ -23,8 +23,6 @@
     border: none;
     cursor:pointer;
     background-color: transparent;
-    width: 30px;
-    height: 30px;
     }
 
     .player .player-button__icon {
@@ -35,7 +33,7 @@
     .player .player-button--pause {}
 
     .player.shadow {
-    box-shadow: 0 0 20px rgba(0,0,0, 0.8)
+    box-shadow: 0 0 20px rgba(0,0,0, 0.8);
     }
   </style>
 </head>
