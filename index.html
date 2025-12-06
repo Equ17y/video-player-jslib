@@ -23,7 +23,10 @@
     border: none;
     cursor:pointer;
     background-color: transparent;
-    font-size: 14pt
+    font-size: 14pt;
+    width: 30px;
+    height: 40px;
+    margin: 0px 3px;
     }
 
     .player .player-button__icon {
@@ -41,32 +44,32 @@
   </style>
 </head>
 <body>
-  <div class="player shadow" id="player">
-    <div class="screen js-video-container" ></div>
-    <div class="bottom-controls">
-      <button class="player-button player-button--play js-play-button">
-        <i class="fa fa-play player-button__icon" aria-hidden="true"></i>
-      </button>
-      <button class="player-button player-button--pause js-pause-button">
-        <i class="fa fa-pause player-button__icon" aria-hidden="true"></i>
-      </button>
-      <button class="player-button player-button--mute js-mute-button">
-        <i class="fa fa-volume-up player-button__icon" aria-hidden="true"></i>
-      </button>
-      <button
-        class="player-button player-button--volume js-volume-button">
-        <i class="fa fa-volume-off player-button__icon" aria-hidden="true"></i>
-      </button>
-    </div>
+<div class="player shadow" id="player">
+  <div class="screen js-video-container"></div>
+  <div class="bottom-controls">
+    <button class="player-button player-button--play js-play-button">
+      <i class="fa fa-play player-button__icon" aria-hidden="true"></i>
+    </button>
+    <button class="player-button player-button--pause js-pause-button">
+      <i class="fa fa-pause player-button__icon" aria-hidden="true"></i>
+    </button>
+    <button class="player-button player-button--mute js-mute-button">
+      <i class="fa fa-volume-up player-button__icon" aria-hidden="true"></i>
+    </button>
+    <button class="player-button player-button--volume js-volume-button">
+      <i class="fa fa-volume-off player-button__icon" aria-hidden="true"></i>
+    </button>
   </div>
-    <!-- Here can be placed player controls: play and volume buttons -->
-  <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
-  <script src="https://unpkg.com/playable@2.10.3/dist/statics/playable.bundle.min.js"></script>
-  <script src="player.js"></script>
+</div>
+<!-- Here can be placed player controls: play and volume buttons -->
+<script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+<script
+  src="https://unpkg.com/playable@2.10.3/dist/statics/playable.bundle.min.js"></script>
+<script src="player.js"></script>
 
-  <script type="text/javascript">
-    createPlayer({elementId: 'player'});
-  </script>
+<script type="text/javascript">
+  createPlayer({elementId: 'player'});
+</script>
 
 </body>
 </html>
