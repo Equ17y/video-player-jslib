@@ -33,11 +33,15 @@
 
     .player .player-button--play {}
     .player .player-button--pause {}
+
+    .player.shadow {
+    box-shadow: 0 0 20px rgba(0,0,0, 0.8)
+    }
   </style>
 </head>
 <body>
-  <div class="player " id="player">
-    <div class="screen js-video-container"></div>
+  <div class="player shadow" id="player">
+    <div class="screen js-video-container" ></div>
     <div class="bottom-controls">
       <button class="player-button player-button--play js-play-button">
         <i class="fa fa-play player-button__icon" aria-hidden="true"></i>
