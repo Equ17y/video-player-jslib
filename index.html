@@ -87,6 +87,16 @@
       border: 3px solid white;
       position: absolute;
       right: -8px;
+      opacity: 0;
+      transition-property: opacity;
+      transition-duration: 300ms;
+      transition-timing-function: ease-in;
+    }
+
+    .progress-container:hover .dot {
+      opacity: 1;
+      transition-duration: 300ms;
+      transition-timing-function: ease-out;
     }
 
     .player.shadow {
@@ -110,14 +120,12 @@
     <button class="player-button player-button--volume js-volume-button">
       <i class="fa fa-volume-off" aria-hidden="true"></i>
     </button>
-
     <div class="current-time-block">
       <span class="js-current-time"></span>
     </div>
-    
     <div class="progress-container js-progress">
       <div class="progress-slider js-progress-slider">
-        <div class="dot"></div>
+      <div class="dot"></div>
       </div>
     </div>
         
