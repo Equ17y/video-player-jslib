@@ -8,36 +8,36 @@
   <link href="https://fonts.google.com/css2?family=Roboto&display=swap" rel="stylesheet">
   <style>
     .player {
-    width: 800px;
-    height: 600px; 
-    display: flex; flex-direction: column;
-    margin: 0;
+      width: 800px;
+      height: 600px; 
+      display: flex; flex-direction: column;
+      margin: 0;
     }
 
     .player .screen {
-    flex-grow: 1;
-    height: 580px;
+      flex-grow: 1;
+      height: 580px;
     }
 
     .player .bottom-controls {
-    background-color: black;
-    display: flex;
-    height: 40px; 
+      background-color: black;
+      display: flex;
+      height: 40px; 
     }
 
     .player .bottom-controls__space {
-    flex-grow: 1;
+      flex-grow: 1;
     }
 
     .player .player-button {
-    border: none;
-    cursor:pointer;
-    background-color: transparent;
-    font-size: 14pt;
-    width: 30px;
-    height: 30px;
-    margin: 3px 3px 0px 3px;
-    color: rgb(255, 255, 255);
+      border: none;
+      cursor:pointer;
+      background-color: transparent;
+      font-size: 14pt;
+      width: 30px;
+      height: 30px;
+      margin: 3px 3px 0px 3px;
+      color: rgb(255, 255, 255);
     }
 
     .current-time-block {
@@ -60,14 +60,37 @@
 
     .progress-container {
       flex-grow: 1;
+      height: 5px;
+      background-color: #4d4d4d;
+      border-radius: 2px;
+      display: flex;
+      align-items: center;
+      margin: 15px 0px 0px 6px;
     }
 
     .progress-slider {
-      color: rgb(255, 0, 0);
+      height: 5px;
+      background-color: #ff0000;
+      border-radius: 2px;
+      display: flex;
+      align-items: center;
+      justify-content: flex-end;
+      position: relative;
+    }
+
+    .dot {
+      height: 9px;
+      width: 9px;
+      background-color: #ff0000;
+      border-radius: 10px;
+      display: inline-block;
+      border: 3px solid white;
+      position: absolute;
+      right: -8px;
     }
 
     .player.shadow {
-    box-shadow: 0 0 20px rgba(0,0,0, 0.8);
+    box-shadow: 10px 10px 20px rgba(0,0,0, 0.8);
     }
   </style>
 </head>
@@ -92,10 +115,12 @@
       <span class="js-current-time"></span>
     </div>
     
-    <div class="progress-container">
-      <div class="progress-slider"></div>
+    <div class="progress-container js-progress">
+      <div class="progress-slider js-progress-slider">
+        <div class="dot"></div>
+      </div>
     </div>
-      
+        
     <div class="duration-block">
       <span class ="js-duration"></span>
     </div>  
