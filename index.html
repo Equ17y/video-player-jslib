@@ -19,14 +19,10 @@
       height: 580px;
     }
 
-    .player .bottom-controls {
+    .player .bottom-controls{
       background-color: black;
       display: flex;
-      height: 40px; 
-    }
-
-    .player .bottom-controls__space {
-      flex-grow: 1;
+      height: 40px;
     }
 
     .player .player-button {
@@ -38,6 +34,16 @@
       height: 30px;
       margin: 3px 3px 0px 3px;
       color: rgb(255, 255, 255);
+      outline: none;
+    }
+
+    .player .player-button:active {
+    background-color: transparent !important;
+    }
+
+    .player .player-button:focus {
+    outline: none;
+    box-shadow: none;
     }
 
     .current-time-block {
@@ -127,13 +133,10 @@
       <div class="progress-slider js-progress-slider">
       <div class="dot"></div>
       </div>
-    </div>
-        
+    </div>   
     <div class="duration-block">
       <span class ="js-duration"></span>
     </div>  
-
-    <!-- <div class="bottom-controls__space"></div> -->
     <button class="player-button player-button--fullscreen js-fullscreen-button">
       <i class="fa fa-expand" aria-hidden="true"></i>
     </button>
