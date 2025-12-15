@@ -10,19 +10,25 @@
     .player {
       width: 800px;
       height: 600px; 
-      display: flex; flex-direction: column;
+      display: flex; 
+      flex-direction: column;
       margin: 0;
+    }
+
+    .player.shadow {
+    box-shadow: 10px 10px 20px rgba(0,0,0, 0.8);
     }
 
     .player .screen {
       flex-grow: 1;
-      height: 580px;
     }
 
     .player .bottom-controls {
       background-color: black;
       display: flex;
-      height: 40px;
+      align-items: center;
+      padding: 6px 8px;
+      column-gap: 6px;
     }
 
     .player .player-button {
@@ -32,36 +38,30 @@
       font-size: 14pt;
       width: 30px;
       height: 30px;
-      margin: 3px 3px 0px 3px;
       color: rgb(255, 255, 255);
       outline: none;
     }
 
-    .player .player-button:active {
-    background-color: transparent !important;
-    }
-
     .player .player-button:focus {
-    outline: none;
-    box-shadow: none;
+      outline: none;
+      box-shadow: none;
     }
 
-    .current-time-block {
-      color: rgb(255, 255, 255);
-      font-size: 16px;
-      font-family: "Roboto", sans-serif;
-      font-weight: 400;
+    .timeline {
       display: flex;
-      margin: 6px 3px 0px 3px;
+      align-items: center;
+      flex-grow: 1;
+      column-gap: 8px;
     }
 
+    .current-time-block,
     .duration-block {
       color: rgb(255, 255, 255);
       font-size: 16px;
       font-family: "Roboto", sans-serif;
       font-weight: 400;
       display: flex;
-      margin: 6px 0px 0px 3px;
+      white-space: nowrap;
     }
 
     .progress-container {
@@ -71,16 +71,13 @@
       border-radius: 2px;
       display: flex;
       align-items: center;
-      margin: 15px 0px 0px 6px;
+      cursor: pointer;
     }
 
     .progress-slider {
       height: 5px;
       background-color: #ff0000;
       border-radius: 2px;
-      display: flex;
-      align-items: center;
-      justify-content: flex-end;
       position: relative;
     }
 
@@ -93,6 +90,8 @@
       border: 3px solid white;
       position: absolute;
       right: -8px;
+      top: 50%;
+      transform: translateY(-50%);
       opacity: 0;
       transition-property: opacity;
       transition-duration: 300ms;
@@ -105,42 +104,41 @@
       transition-timing-function: ease-out;
     }
 
-    .player.shadow {
-    box-shadow: 10px 10px 20px rgba(0,0,0, 0.8);
-    }
+
   </style>
 </head>
 <body>
 <div class="player shadow" id="player">
   <div class="screen js-video-container"></div>
-  <div class="bottom-controls">
-    <button class="player-button player-button--play js-play-button">
+  <div class="bottom-controls"> 
+    <button class="player-button js-play-button">
       <i class="fa fa-play" aria-hidden="true"></i>
     </button>
-    <button class="player-button player-button--pause js-pause-button">
+    <button class="player-button js-pause-button">
       <i class="fa fa-pause" aria-hidden="true"></i>
     </button>
-    <button class="player-button player-button--mute js-mute-button">
+    <button class="player-button js-mute-button">
       <i class="fa fa-volume-up" aria-hidden="true"></i>
     </button>
-    <button class="player-button player-button--volume js-volume-button">
+    <button class="player-button js-volume-button">
       <i class="fa fa-volume-off" aria-hidden="true"></i>
     </button>
-    <div class="current-time-block">
-      <span class="js-current-time"></span>
-    </div>
-    <div class="progress-container js-progress">
-      <div class="progress-slider js-progress-slider">
-      <div class="dot"></div>
+    <div class="timeline">
+      <div class="current-time-block">
+        <span class="js-current-time"></span>
       </div>
-    </div>   
-    <div class="duration-block">
-      <span class ="js-duration"></span>
-    </div>  
-    <button class="player-button player-button--fullscreen js-fullscreen-button">
+      <div class="progress-container js-progress">
+        <div class="progress-slider js-progress-slider">
+          <div class="dot"></div>
+        </div>
+      </div>   
+      <div class="duration-block">
+        <span class ="js-duration"></span>
+      </div>
+    </div>    
+    <button class="player-button js-fullscreen-button">
       <i class="fa fa-expand" aria-hidden="true"></i>
     </button>
-  </div>
 </div>
 <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
 <script
